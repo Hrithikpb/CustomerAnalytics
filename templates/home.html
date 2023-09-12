@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custy Champ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../static/Img/CustyChampPro.png" type="image/icon type">
+    <link rel="stylesheet" href="..\static\CSS\base.css">
+    <link rel="stylesheet" href="..\static\CSS\home.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="section">
+
+        <section class="header">
+
+            <nav>
+                <a href="home.html"><img src="../static/Img/CustyChampPro.png"></a>
+                <a id="CC" href="home.html">CUSTY CHAMP</a>
+                <div class="nav-links" id="NL">
+                    <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                    <ul>
+                        <li>
+                            <a href="home.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="services.html">SERVICES</a>
+                        </li>
+                        <li>
+                            <a href="about_us.html">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="#footer">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+
+            <div class=" text-area">
+                <h1>
+                    CUSTY ANALYTICS
+                </h1>
+                <p>
+                    Do you want to understand your customers better?
+                </p>
+                <a class="GSB" href="{{url_for('fileupload')}}">Get started</a>
+            </div>
+        </section>
+    </div>
+
+    <section class="service">
+        <img src="../static/Img/service.svg">
+        <div class="serv">
+            <h2>
+                Upgrade your business with <br><span>CUSTY CHAMP</span>.
+            </h2>
+            <a class="SB" href="services.html">Know More</a>
+        </div>
+    </section>
+
+    <div class="third">
+        <section class="about">
+            <h2>
+                CUSTY CHAMP developers:
+            </h2>
+            <p>
+                The three of us have put our heart and soul in building and developing this project.
+            </p>
+            <div class="ab-row">
+                <div class="ab-col">
+                    <img src="../static/Img/C_AK1.png">
+                    <div class="layer">
+                        <h3>ANUJ KINGE</h3>
+                    </div>
+                </div>
+                <div class="ab-col">
+                    <img src="../static/Img/C_PB1.png">
+                    <div class="layer">
+                        <h3>HRITHIK P. B.</h3>
+                    </div>
+                </div>
+                <div class="ab-col">
+                    <img src="../static/Img/C_YO1.png">
+                    <div class="layer">
+                        <h3>YASH OSWAL</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="footer">
+        <h4>
+            Contact us:
+        </h4>
+        <p>
+            customeranalytics@gmail.com
+        </p>
+        <p>
+            Made with <i class="fa fa-heart"></i> by CUSTY CHAMP developers.
+        </p>
+        <p>
+            All rights reserved. © 2022 CUSTY ANALYTICS.
+        </p>
+    </section>
+
+    <script>
+        var NavL = document.getElementById("NL");
+        function showMenu() {
+            NavL.style.right = '0';
+        }
+        function hideMenu() {
+            NavL.style.right = '-200px';
+        }
+
+    </script>
+
+</body>
+
+</html>

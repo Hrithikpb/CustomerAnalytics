@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Custy Analytics</h1>
+
+<form action="/features/invoicemanagement/update/{{record.sno}}" method="POST">
+    <label for="voucherno">VOUCHER NO</label>
+        <input value= "{{record.voucherno}}" type="text" name="voucherno" id="voucherno">
+
+        <label for="customerreference">CUSTOMER REFERENCE</label>
+        <input value= "{{record.customerreference}}" type="text" name="customerreference" id="customerreference">
+
+        <label for="productid">PRODUCT ID</label>
+        <input value= "{{record.productid}}" type="text" name="productid" id="productid">
+
+        <label for="productname">PRODUCT NAME</label>
+        <input value= "{{record.productname}}" type="text" name="productname" id="productname">
+
+        <label for="qty">QUANTITY</label>
+        <input value= "{{record.qty}}" type="text" name="qty" id="qty">
+
+        <label for="mrp">MRP</label>
+        <input value= "{{record.mrp}}" type="text" name="mrp" id="mrp">
+    
+    <button type="submit">Update</button>
+  </form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1> Sales </h1>
+
+        Top 5 most expensive products
+        <table>
+            {% for i in table1 %}
+            {{i | safe}}
+            {% endfor %}
+        </table>
+
+        Top 5 cheap products
+        <table>
+            {% for i in table2 %}
+            {{i | safe}}
+            {% endfor %}
+        </table>
+
+        <div id='graph1'>{{graph1|safe}}</div>
+
+        Highest Sale
+        <table>
+            {% for i in table4 %}
+            {{i | safe}}
+            {% endfor %}
+        </table>
+
+        Lowest Sale
+        <table>
+            {% for i in table5 %}
+            {{i | safe}}
+            {% endfor %}
+        </table>
+
+
+        <div id='graph2'>{{graph2|safe}}</div>
+
+        <div id='graph3'>{{graph3|safe}}</div>
+
+        Monthly Sales
+        <table>
+            {% for i in table3 %}
+            {{i | safe}}
+            {% endfor %}
+        </table>
+
+        Get sales insights for individual products
+        <a href="{{url_for('getproductids')}}">PRODUCT SALES</a>  <br>
+
+</body>
+</html>

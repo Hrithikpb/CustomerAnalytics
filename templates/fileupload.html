@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custy - upload</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/Img/CustyChampPro.png" type="image/icon type">
+    <link rel="stylesheet" href="..\static\CSS\base.css">
+    <link rel="stylesheet" href="..\static\CSS\fileupload.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="header">
+        <nav>
+            <a href="home.html"><img src="../static/Img/CustyChampPro.png"></a>
+            <a id="CC" href="home.html">CUSTY CHAMP</a>
+            <div class="nav-links" id="NL">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                <ul>
+                    <li>
+                        <a href="home.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="services.html">SERVICES</a>
+                    </li>
+                    <li>
+                        <a href="about_us.html">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="#footer">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="section1">
+
+            <h1>Please upload your CSV file here</h1>
+
+            <div id="button">
+
+                <form action="/features" method="POST" enctype=multipart/form-data>
+
+                    <div id="inp">
+
+                        <label for="myfile">Select a file:</label>
+                        <input type="file" id="myfile" name="myfile" required="required"><br><br>
+                        <br>
+                        <button class="GS" type="submit">Submit</button>
+
+                    </div>
+
+                </form>
+                <div class="note">
+                    <p>
+                        <br>
+                        <span id="line">  Note: The uploaded file should be a CSV (comma-separated-values)
+                        file.</span>
+                        <br>
+                        <br>
+                        The file should have the following features (columns):
+                        <br>
+                        <i class="fa fa-star"></i> DATE (date)
+                        <br>
+                        <i class="fa fa-star"></i> VOUCHERNO (invoice number)
+                        <br>
+                        <i class="fa fa-star"></i> CUSTOMER REFERENCE (customer id)
+                        <br>
+                        <i class="fa fa-star"></i> PRODUCT ID (product code)
+                        <br>
+                        <i class="fa fa-star"></i> PRODUCT NAME (product description)
+                        <br>
+                        <i class="fa fa-star"></i> QTY (quantity)
+                        <br>
+                        <i class="fa fa-star"></i> MRP (price)
+                        <br>
+                        <i class="fa fa-star"></i> AMOUNT (total amount)
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="footer">
+        <h4>
+            Contact us:
+        </h4>
+        <p>
+            customeranalytics@gmail.com
+        </p>
+        <p>
+            Made with <i class="fa fa-heart"></i> by CUSTY CHAMP developers.
+        </p>
+        <p>
+            All rights reserved. © 2022 CUSTY ANALYTICS.
+        </p>
+    </section>
+
+    <script>
+        var NavL = document.getElementById("NL");
+        function showMenu() {
+            NavL.style.right = '0';
+        }
+        function hideMenu() {
+            NavL.style.right = '-200px';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> OFFERS </h1>
+
+
+
+    <form action="/features/customer-segmentation/customized-offers/offer-status" method="POST"
+        enctype=multipart/form-data> Selected Customer <select name="custid">
+        <option value="{{custID}}" selected>{{custID}}</option>
+        </select>
+        <br>
+        Select item
+
+
+        </select>
+
+            {% for i in products %}
+                    <div>{{i}}  <input type="checkbox" value= '{{i}}' name="checkbox"></div>
+            {% endfor %}
+            
+        
+
+
+
+        <br>
+
+        Discount %
+        <select name="discount">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">30</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+        </select>
+
+        <button type="submit">Send Offer</button>
+    </form>
+
+
+
+
+</body>
+
+</html>

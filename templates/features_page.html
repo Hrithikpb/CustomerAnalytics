@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/features.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="../static/Img/CustyChampPro.png" type="image/icon type">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="home.html"><img src="../static/Img/CustyChampPro.png"></a>
+            <a id="CC" href="home.html">CUSTY CHAMP</a>
+            <div class="nav-links" id="NL">
+                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                <ul>
+                    <li>
+                        <a href="home.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="services.html">SERVICES</a>
+                    </li>
+                    <li>
+                        <a href="about_us.html">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="#footer">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="bg">
+
+            <section class="feat">
+                <div class="f-row">
+                    <div class="f-col">
+                        <img src="../static/Img/BI.svg">
+                        <div class="layer">
+                            <h3>
+                                <a href="{{url_for('basicinsights')}}">
+                                    Basic Insights
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="f-col">
+                        <img src="../static/Img/SA.svg">
+                        <div class="layer">
+                            <h3>
+                                <a href="{{url_for('sales')}}">
+                                    Sales Analysis
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="f-col">
+                        <img src="../static/Img/CP.svg">
+                        <div class="layer">
+                            <h3>
+                                <a href="{{url_for('getcustomerids')}}">
+                                    Customer Profiling
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feat">
+                <div class="f-row">
+                    <div class="f-col">
+                        <img src="../static/Img/CCS.svg">
+                        <div class="layer">
+                            <h3>
+                                <h3>
+                                    <a href="{{url_for('segmentation')}}">
+                                        Customer Churn and Segmentation
+                                    </a>
+                                </h3>
+                        </div>
+                    </div>
+                    <div class="f-col">
+                        <img src="../static/Img/MBA.svg">
+                        <div class="layer">
+                            <h3>
+                                <a href="{{url_for('marketbasketanalysis')}}">
+                                    Market Basket Analysis
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="f-col">
+                        <img src="../static/Img/IM.svg">
+                        <div class="layer">
+                            <h3>
+                                <a href="{{url_for('invoicemanagement')}}">Invoice Management</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </section>
+
+    <section id="footer">
+        <h4>
+            Contact us:
+        </h4>
+        <p>
+            customeranalytics@gmail.com
+        </p>
+        <p>
+            Made with <i class="fa fa-heart"></i> by CUSTY CHAMP developers.
+        </p>
+        <p>
+            All rights reserved. © 2022 CUSTY ANALYTICS.
+        </p>
+    </section>
+
+    <script>
+        var NavL = document.getElementById("NL");
+        function showMenu() {
+            NavL.style.right = '0';
+        }
+        function hideMenu() {
+            NavL.style.right = '-200px';
+        }
+    </script>
+
+</body>
+
+</html>

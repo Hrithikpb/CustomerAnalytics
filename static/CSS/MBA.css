@@ -1,0 +1,145 @@
+.head1 {
+    background-color: #90E0EF;
+}
+
+.head1 h1 {
+    color: #023e8a;
+    font-size: 33px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.head1 h2 {
+    color: #023e8a;
+    font-size: 18px;
+    text-align: right;
+    align-items: right;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+
+/* Graph below */
+
+#graph1 {
+    width: 80%;
+    background-color: #ADE8F4;
+    text-align: center;
+    align-items: center;
+    margin: 5px 10%;
+}
+
+/* top 10 */
+
+.top10 {
+    background-color: #90E0EF;
+    color: #023e8a;
+    padding: 10px;
+    margin: 5px;
+}
+
+.top10 h2 {
+    font-size: 26px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.top10 p {
+    font-size: 15px;
+    text-align: justify;
+    align-items: center;
+}
+
+/* DHAPF */
+
+.DHAPF {
+    display: inline-block;
+    text-decoration: none;
+    color: #023e8a;
+    padding: 12px 34px;
+    border: 2px solid #023e8a;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.DHAPF:hover {
+    border-color: #023e8a;
+    background-color: #023e8a;
+    color: #90E0EF;
+    box-shadow: 0 0.5em 0.5em -0.4em #023e8a;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+.head2 h2 {
+    color: #023e8a;
+    font-size: 26px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.bg {
+    background-color: #00B4D8;
+}
+
+.head2 {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    padding-top: 50px;
+    color: #023e8a;
+}
+
+.head2 p {
+    color: #023e8a;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    margin: 10px;
+}
+
+.a-row {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.a-col {
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    background-color: #CAF0F8;
+    padding: 5px;
+}
+
+.head2 a {
+    margin-bottom: 15px;
+}
+
+/* Zhang's below */
+
+.head3 {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    padding-top: 50px;
+    color: #023e8a;
+    font-size: 18px;
+}
+
+.head3 h2 {
+    color: #023e8a;
+    font-size: 26px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> OFFERS </h1>
+
+<h1>Offer details</h1>
+{% if custID %}
+    Customer Reference ID:<h2>{{custID}}</h2>
+{% endif %}
+
+{% if level != None %}
+       Mail has been sent to all {{level}} customers 
+{% endif %}
+
+<br>
+Discount Offer: <h2>{{discount}} %</h2>
+Products: 
+
+
+{% for i in range1 %}
+       <li> PRODUCT NAME-{{products[i]}} MRP = {{ MRP[i] }} DISCOUNTED PRICE = {{MRP[i] - MRP[i] * discount * 0.01}}</li>
+{% endfor %}
+
+
+
+
+
+</body>
+
+</html>

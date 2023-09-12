@@ -1,0 +1,104 @@
+.text-matter {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.text-matter h1 {
+    font-size: 43px;
+    color: #023e8a;
+}
+
+.text-matter h2 {
+    font-size: 20px;
+    color: #023e8a;
+    padding: 20px 0;
+    line-height: 40px;
+}
+
+.third {
+    background-color: #CAF0F8;
+}
+
+.about {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding-top: 50px;
+    color: #023e8a;
+}
+
+.about h2 {
+    padding: 25px;
+    font-size: 34px;
+}
+
+.about p {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.ab-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.ab-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ab-col img {
+    width: 100%;
+    display: block;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.layer h3 a {
+    text-decoration: none;
+}
+
+.layer:hover {
+    background-color: #48CAE4;
+    opacity: 0.77;
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 400;
+    color: #023e8a;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    opacity: 1;
+    bottom: 49%;
+}
+
+@media(max-width: 700px) {
+
+    .ab-row {
+        flex-direction: column;
+    }
+
+}

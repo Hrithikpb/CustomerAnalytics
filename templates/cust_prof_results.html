@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> CUSTOMER PROFILING </h1>
+
+
+
+    <h3>Dates of Purchases</h3>
+    <ul>
+        {% for i in dates_of_purchase %}
+        <li> {{ i}} </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Invoices </h3>
+    <ul>
+        {% for i in invoices %}
+        <li> {{ i}} </li>
+        {% endfor %}
+    </ul>
+    <h3>Total number of transactions: {{number_of_transactions}}</h3>
+
+    <h3>Products bought</h3>
+    <ul>
+        {% for i in products %}
+        <li> {{ i}} </li>
+        {% endfor %}
+    </ul>
+    <h3>Total number of products bought: {{number_of_products}}</h3>
+
+    <h3>Total Expenditure: {{total_expenditure}} Rs.</h3>
+
+</body>
+
+</html>

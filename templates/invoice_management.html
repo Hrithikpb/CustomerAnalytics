@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Custy Analytics</h1>
+    
+
+    Select Invoice ID
+
+    <form action="/features/invoicemanagement/searchinvoice" method="POST" enctype=multipart/form-data>
+      
+        <select name="unique_invoices">
+            <option value="{{unique_invoices[0]}}" selected>{{unique_invoices[0]}}</option>
+            {% for i in unique_invoices[1:] %}
+              <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Submit</button>
+        </form>
+
+
+
+
+
+
+    <a href="{{url_for('download_database')}}">Download your data in CSV Format</a> 
+
+
+
+    <h2>Add record</h2>
+    <form action="/features/invoicemanagement" method="POST">
+
+        <label for="voucherno">VOUCHER NO</label>
+        <input type="text" name="voucherno" id="voucherno">
+
+        <label for="customerreference">CUSTOMER REFERENCE</label>
+        <input type="text" name="customerreference" id="customerreference">
+
+        <label for="productid">PRODUCT ID</label>
+        <input type="text" name="productid" id="productid">
+
+        <label for="productname">PRODUCT NAME</label>
+        <input type="text" name="productname" id="productname">
+
+        <label for="qty">QUANTITY</label>
+        <input type="text" name="qty" id="qty">
+
+        <label for="mrp">MRP</label>
+        <input type="text" name="mrp" id="mrp">
+
+
+        <button type="submit" >Submit</button>
+    </form>
+
+        <h2>Records</h2>
+
+        {% if allInvoices|length == 0 %}
+            No records found.
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">SRNO.</th>
+                    <th scope="col">DATE</th>
+                    <th scope="col">VOUCHERNO</th>
+                    <th scope="col">CUSTOMER REFERENCE</th>
+                    <th scope="col">PRODUCT ID</th>
+                    <th scope="col">PRODUCT NAME</th>
+                    <th scope="col">QUANTITY</th>
+                    <th scope="col">MRP</th>
+                    <th scope="col">TOTAL AMOUNT</th>
+                    <th scope="col">ACTION</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for record in allInvoices %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{record.current_date}}</td>
+                    <td>{{record.voucherno}}</td>
+                    <td>{{record.customerreference}}</td>
+                    <td>{{record.productid}}</td>
+                    <td>{{record.productname}}</td>
+                    <td>{{record.qty}}</td>
+                    <td>{{record.mrp}}</td>
+                    <td>{{record.amount}}</td>
+                    <td>
+                        <a href="/features/invoicemanagement/update/{{record.sno}}" type="button">Update</button>
+                            <a href="/features/invoicemanagement/delete/{{record.sno}}" type="button">Delete</button>
+
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+
+
+
+</body>
+
+</html>

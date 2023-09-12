@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Market Basket Analysis</title>
+        <link rel="stylesheet" href="../static/CSS/base.css">
+        <link rel="stylesheet" href="../static/CSS/MBA.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="icon" href="../static/Img/CustyChampPro.png" type="image/icon type">
+</head>
+
+<body>
+
+        <section class="header">
+                <nav>
+                        <a href="home.html"><img src="../static/Img/CustyChampPro.png"></a>
+                        <a id="CC" href="home.html">CUSTY CHAMP</a>
+                        <div class="nav-links" id="NL">
+                                <i class="fa fa-times-circle" onclick="hideMenu()"></i>
+                                <ul>
+                                        <li>
+                                                <a href="home.html">HOME</a>
+                                        </li>
+                                        <li>
+                                                <a href="services.html">SERVICES</a>
+                                        </li>
+                                        <li>
+                                                <a href="about_us.html">ABOUT US</a>
+                                        </li>
+                                        <li>
+                                                <a href="#footer">CONTACT US</a>
+                                        </li>
+                                </ul>
+                        </div>
+                        <i class="fa fa-bars" onclick="showMenu()"></i>
+                </nav>
+
+                <hr>
+
+                <div class="head1">
+                        <h1> MARKET BASKET ANALYSIS </h1>
+                        <h2>Total transactions: {{total_transactions }}</h2>
+                        <h2>Total customers: {{total_customers}}</h2>
+                        <h2>Total products sold: {{total_products }}</h2>
+                </div>
+
+                <hr>
+
+                <div id='graph1'>{{graph1|safe}}</div>
+
+                <div class="top10">
+                        <h2>Top 10 items bought:</h2>
+                        {% for i in list_of_top_10_items %}
+                        <p>
+                                Product: {{i[0]}} (Quantity: {{i[1]}})
+                        </p>
+                        <br>
+                        {% endfor %}
+                </div>
+
+                <hr>
+                <section class="bg">
+                        <section class="head2">
+                                <h2>The following pairs are mostly purchased together:</h2>
+                                {% for i in list_of_association_rules %}
+                                {% if i[0]|length == 1 %}
+
+                                <div class="a-row">
+                                        <div class="a-col">
+                                                <p>'{{ i[0][0]}}'
+                                                        <br>
+                                                        is often bought with
+                                                        <br>
+                                                        '{{i[1][0]}}'
+                                                </p>
+                                        </div>
+                                </div>
+                                {% else %}
+                                <div class="a-row">
+                                        <div class="a-col">
+                                                <p>'{{ i[0][0]}}' and '{{i[0][1]}}'
+                                                        <br>
+                                                        is often bought with
+                                                        <br>
+                                                        '{{i[1][0]}}'
+                                                </p>
+                                                {% endif %}
+                                        </div>
+                                </div>
+                                {% endfor %}
+                                <p>
+                                        Click on the button below to download 'High Association Products' file.
+                                </p>
+                                <a class="DHAPF" href="{{url_for('download_high_association_products_file')}}">
+                                        Download
+                                </a>
+                        </section>
+                </section>
+
+
+                <hr>
+
+                <section class="head3">
+
+                        <h2>The following pairs are mostly never purchased together:</h2>
+                        {% for i in list_of_poor_association_rules %}
+                        <div class="a-row">
+                                <div class="a-col">
+                                        <p>'{{ i[0]}}'
+                                                <br>
+                                                is almost never bought with
+                                                <br>
+                                                '{{i[1]}}'
+                                        </p>
+                                </div>
+                        </div>
+                        {% endfor %}
+
+                </section>
+
+                <hr>
+
+        </section>
+
+        <section id="footer">
+                <h4>
+                        Contact us:
+                </h4>
+                <p>
+                        customeranalytics@gmail.com
+                </p>
+                <p>
+                        Made with <i class="fa fa-heart"></i> by CUSTY CHAMP developers.
+                </p>
+                <p>
+                        All rights reserved. © 2022 CUSTY ANALYTICS.
+                </p>
+        </section>
+
+        <script>
+                var NavL = document.getElementById("NL");
+                function showMenu() {
+                        NavL.style.right = '0';
+                }
+                function hideMenu() {
+                        NavL.style.right = '-200px';
+                }
+        </script>
+
+</body>
+
+</html>
