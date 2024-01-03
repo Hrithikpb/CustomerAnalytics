@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+        <h1> BASIC INSIGHTS </h1>
+
+
+        {% if null %}
+        <p>There are missing values </p>
+        <div id='graph1'>{{graph1|safe}}</div>
+
+        <table>
+                {% for i in table1 %}
+                {{i | safe}}
+                {% endfor %}
+        </table>
+        <p>Please upload file that has no missing values</p>
+
+        {% else %}
+        <p>There are no missing values</p>
+
+
+        No. of Records for given transactional dataset {{dimension[0]}} <br>
+        No. of Columns(Features) for given transactional dataset {{dimension[1]}} <br>
+        Columns
+        <ul>
+                {% for i in columns %}
+                <li>{{i}}</li>
+
+                {% endfor %}
+        </ul>
+
+
+
+        Total Invoices/Transactions {{dataset['VOUCHERNO'].nunique()}}<br>
+        Total no. of customers {{dataset['CUSTOMER REFERENCE'].nunique()}}<br>
+        Total no. of products {{dataset['PRODUCT NAME'].nunique()}}<br>
+
+        Top 10 High price products
+        <table>
+                {% for i in table2 %}
+                {{i | safe}}
+                {% endfor %}
+
+        </table>
+
+
+        Least 10 Low price products
+
+        <table>
+                {% for i in table3 %}
+                {{i | safe}}
+                {% endfor %}
+
+        </table>
+
+        <br>
+
+        Top 10 Spenders
+        <table>
+                {% for i in table4 %}
+                {{i | safe}}
+                {% endfor %}
+
+        </table>
+
+
+        <br>
+
+        These are the items whose price is either increased or decreased in the given duration
+        <ul>
+                {% for i in price_changed_items %}
+                <li>{{ i}}</li>
+                {% endfor %}
+        </ul>
+
+        <div id='graph3'>{{graph3|safe}}</div>
+
+        <form action="/features/basicinsights" method="POST" enctype=multipart/form-data> <select name="products">
+                <option value="{{price_changed_items[0]}}" selected>{{price_changed_items[0]}}</option>
+                {% for i in price_changed_items[1:] %}
+                <option value="{{i}}">{{i}}</option>
+                {% endfor %}
+                </select>
+
+                <button type="submit">Submit</button>
+        </form>
+
+        <div id='graph2'>{{graph2|safe}}</div>
+
+        {% endif %}
+</body>
+
+</html>
